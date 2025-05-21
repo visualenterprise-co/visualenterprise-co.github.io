@@ -1,0 +1,774 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: outfit;
+}
+
+nav{
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    position: fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mainNav{
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+}
+
+.mainNavItems{
+    float: right;
+    padding: 20px;
+}
+
+/* Botón de menú hamburguesa */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* Animación del menú hamburguesa cuando está activo */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+
+.mainNavItems:hover{
+    background-color: rgb(216, 216, 216);
+    color: white;
+    transition: 0.5s;
+    
+}
+
+li a{
+    color: black;
+}
+
+.subNavServicios{
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -20px;   
+}
+
+.subNavServicios li{
+    background-color: rgb(154, 154, 155);
+}
+
+.subNavServicios li a{
+    display: block;
+    padding: 20px;
+}
+
+
+.subNavServicios li:hover{
+    background-color: black;
+    transition: 0.5s;
+}
+
+.subNavServicios li a{
+    color: white;
+    font-weight: 200;
+}
+
+#servicios:hover .subNavServicios{
+    display: block;
+    transition: 0.5s;
+
+}
+
+
+.logo svg{
+    width: 150px;
+    height: auto;
+    float: left;
+    padding: 20px;
+    margin-left:20px ;
+}
+
+/* HERO SECTION FIX */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #222;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.45);
+}
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+.hero-content p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        height: 260px;
+    }
+    .hero-content h1 {
+        font-size: 1.7rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    nav, .hero, .nuestrosServiciosItems, .contacto, footer {
+        width: 100vw !important;
+        box-sizing: border-box;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    
+    .mainNav {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        background-color: white;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+        flex-direction: column;
+        display: none !important;
+        z-index: 1000;
+    }
+    
+    .mainNav.active {
+        display: flex !important;
+        flex-direction: column;
+    }
+    
+    /* Estilo para el submenú de servicios en móvil */
+    .subNavServicios {
+        position: relative;
+        width: calc(100vw - 20px);
+        left: 0;
+        margin: 0 10px 0 10px;
+        display: none;
+        transition: all 0.3s ease;
+        background-color: rgb(154, 154, 155);
+        box-sizing: border-box;
+        padding: 0;
+        border-radius: 0 0 12px 12px;
+        overflow: hidden;
+    }
+    
+    #servicios.active .subNavServicios {
+        display: block;
+    }
+    
+    .subNavServicios li {
+        background-color: rgb(154, 154, 155);
+        padding: 0;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+        box-sizing: border-box;
+        word-break: break-word;
+    }
+    
+    .subNavServicios li:last-child {
+        border-bottom: none;
+    }
+    
+    .subNavServicios li a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 20px;
+        color: white;
+        font-weight: 200;
+        text-align: left;
+        white-space: normal;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    .mainNavItems {
+        float: none;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding: 15px;
+        margin: 0;
+    }
+    
+    .subNavServicios {
+        position: static;
+        width: 100%;
+        margin: 0;
+        display: none;
+    }
+    
+    #servicios:hover .subNavServicios {
+        display: none;
+    }
+    
+    #servicios.active .subNavServicios {
+        display: block;
+    }
+    
+    .hero {
+        flex-direction: column;
+    }
+    
+    .heroText, .heroImage {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .heroText {
+        font-size: 30px;
+        margin-left: 0;
+    }
+    
+    .heroImage svg {
+        margin-right: 0;
+    }
+    
+    .nuestrosServiciosItems {
+        flex-direction: column;
+    }
+    
+    .serviciosContainer {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/*NUESTROS SERVICIOS*/
+.nuestrosServiciosTitle{
+
+    background-color: black;
+    display: flex;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 200;
+    color: white;
+}
+
+.nuestrosServiciosTitle h2{
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+}
+
+.nuestrosServiciosItems{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.serviciosContainer{
+    flex-wrap: wrap;
+    width: 33.33333%;
+    height: 500px;
+}
+
+#visualTech{
+    background-image: url(/images/bg_visualTech.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#visualAnalytics{
+    background-image: url(/images/bg_visualAnalytics.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#visualEngineering{
+    background-image: url(/images/bg_visualEngineering.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+#visualTech:hover{
+    background-image: url(/images/bg_visualTech_hover.png);
+    transition: 0.3s;
+}
+
+#visualAnalytics:hover{
+    background-image: url(/images/bg_visualAnalytics_hover.png);
+    transition: 0.3s;
+}
+
+#visualEngineering:hover{
+    background-image: url(/images/bg_visualEngineering_hover.png);
+    transition: 0.3s;
+}
+
+
+.btnSaberMasContainer{
+    display:none;
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 300px;
+}
+
+.btnSaberMas{
+    background-color: white;
+    color: black;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.btnSaberMas:hover{
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+
+}
+
+.serviciosContainer:hover .btnSaberMasContainer{
+    display: block;
+    z-index: 2;
+   transition: 0.3s;
+}
+
+.servicioLogo{
+    display: none;
+    text-align: center;
+}
+
+.servicioLogo svg{
+    width: 300px;
+}
+
+.serviciosContainer:hover .servicioLogo{
+    display: block;
+    transition: 0.3s;
+}
+
+/* Sección de Servicios */
+.seccion-animada {
+    padding: 60px 0 40px 0;
+    background: #f7f7f7;
+}
+.titulo-seccion {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #222;
+    letter-spacing: 2px;
+}
+.servicios-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.categoria-servicio {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 32px 28px 28px 28px;
+    width: 320px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+}
+.categoria-servicio.animar-fadeInUp {
+    /* El delay se puede controlar inline */
+}
+.categoria-servicio:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+.icono-categoria {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+.categoria-servicio h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: #0a3d62;
+    font-weight: 600;
+}
+.categoria-servicio ul {
+    padding-left: 18px;
+    width: 100%;
+}
+.categoria-servicio li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    position: relative;
+}
+.categoria-servicio li:before {
+    content: '•';
+    color: #0a3d62;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* Sección de Proyectos */
+.proyectos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 30px;
+}
+.proyecto {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+    width: 340px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1s forwards;
+    display: flex;
+    flex-direction: column;
+}
+.proyecto.animar-fadeInUp {
+    /* El delay se puede controlar inline */
+}
+.proyecto:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+}
+.img-proyecto {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+.info-proyecto {
+    padding: 18px 20px 20px 20px;
+}
+.info-proyecto h4 {
+    font-size: 1.1rem;
+    color: #0a3d62;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+.info-proyecto p {
+    color: #444;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .servicios-categorias, .proyectos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .categoria-servicio, .proyecto {
+        width: 90%;
+        min-width: 260px;
+    }
+}
+@media (max-width: 600px) {
+    .seccion-animada {
+        padding: 30px 0 20px 0;
+    }
+    .categoria-servicio, .proyecto {
+        padding: 18px 8px;
+        width: 98%;
+    }
+    .img-proyecto {
+        height: 140px;
+    }
+}
+
+/*CONTACTO*/
+.contacto{
+    width: 100%;
+    background-color: #23435D;
+    padding: 50px 0;
+    color: white;
+    text-align: center;
+}
+
+.contactoTitle{
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+.contactoContainer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contactoInfo, .contactoForm{
+    width: 45%;
+    min-width: 300px;
+    margin-bottom: 30px;
+}
+
+.contactoInfo p{
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.contactoInfo i{
+    margin-right: 10px;
+    color: white;
+}
+
+.contactoInfo h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+   
+}
+
+.contactoForm input, .contactoForm textarea{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.contactoForm h3{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contactoForm textarea{
+    height: 150px;
+    resize: none;
+}
+
+.contactoForm button{
+    background-color: black;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.contactoForm button:hover{
+    background-color: white;
+    color: black;
+}
+
+/* FOOTER */
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footerLogo svg{
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.footerLinks{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footerLinks a{
+    color: white;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+.footerLinks a:hover{
+    color: #23435D;
+}
+
+.copyright{
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1024px){
+    .heroText{
+        font-size: 40px;
+    }
+    
+    .heroImage svg{
+        margin-right: 60px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .hero{
+        flex-direction: column;
+    }
+    
+    .heroText, .heroImage{
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .heroImage svg{
+        margin-right: 0;
+        margin-top: 30px;
+    }
+    
+    .nuestrosServiciosItems{
+        flex-direction: column;
+    }
+    
+    .serviciosContainer{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .contactoInfo, .contactoForm{
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+    
+    .contactoForm input, .contactoForm textarea{
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    nav{
+        position: relative;
+    }
+    
+    .mainNav{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .mainNavItems{
+        float: none;
+        text-align: center;
+    }
+    
+    .logo svg{
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .subNavServicios{
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .heroText{
+        font-size: 30px;
+        margin-top: 30px;
+    }
+}
