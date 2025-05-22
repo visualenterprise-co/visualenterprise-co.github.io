@@ -1,8 +1,8 @@
-// Mostrar el botón al llegar al final de la página
+// Mostrar el botón al hacer scroll de al menos 200px
 document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('scrollToTopBtn');
     window.addEventListener('scroll', function() {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        if (window.scrollY >= 200) {
             btn.style.display = 'block';
             btn.style.opacity = '1';
             btn.style.background = 'rgba(35,67,93,1)';
